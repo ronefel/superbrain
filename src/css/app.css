@@ -1,0 +1,10 @@
+﻿@font-face {
+    font-family: "Emulogic";
+    src: url("../assets/font/Emulogic.ttf");
+}
+
+#game-content, #game-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
