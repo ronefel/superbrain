@@ -1,0 +1,10 @@
+﻿#game-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#game-content {
+    max-width: 1280px;
+    max-height: 720px;
+    margin: 0 auto;
+}

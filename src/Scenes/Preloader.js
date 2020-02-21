@@ -28,9 +28,12 @@ export default class Preloader extends SceneBase {
 
     console.log("Loading assets...");
 
-    // load atlas with test sprites
-    this.load.atlas("Sprites", "assets/sprites/Sprites.png", "assets/sprites/Sprites.json");
+    // font timotheos
+    this.load.bitmapFont('timotheos', 'assets/font/bitmapFonts/timotheos.png', 'assets/font/bitmapFonts/timotheos.xml');
 
-    this.load.atlas("Mega", "assets/sprites/Mega.png", "assets/sprites/Mega.json");
+    // load assets
+    this.load.image('startScreen', 'assets/sprites/startScreen.png');
+    this.load.image('playButton', 'assets/sprites/playButton.png');
+
   }
 }

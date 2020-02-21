@@ -7,16 +7,21 @@ export default class Menu extends SceneBase {
     console.log("Menu");
 
     // bacground color
-    this.cameras.main.backgroundColor = Phaser.Display.Color.ValueToColor(0x808080);
+    //this.cameras.main.backgroundColor = Phaser.Display.Color.ValueToColor(0x808080);
 
     // focus on 0, 0
     this.setView();
 
     // sound and music icons
-    this.addAudioControlls();
+    // this.addAudioControlls();
+
+    // add startScreen
+    this.add.image(0, 0, 'startScreen');
 
     // add play button
     this.addPlayButton();
+
+    // this.add.bitmapText(-this.gameWidth / 2 + 50, -this.gameHeight / 2 + 50, 'timotheos', 'super cérebro', 72);
   }
 
   // --------------------------------------------------------------------
@@ -47,8 +52,16 @@ export default class Menu extends SceneBase {
   // --------------------------------------------------------------------
   addPlayButton() {
     // play
-    let play = this.add.sprite(0, 0, "Sprites", "IconPlay");
+    let play = this.add.image(390, 24, 'playButton');
     play.setInteractive();
+    play.on("pointerover", () => {
+      play.setScale(1.1);
+      this.sys.canvas.style.cursor = "pointer";
+    });
+    play.on("pointerout", () => {
+      play.setScale(1);
+      this.sys.canvas.style.cursor = "default";
+    });
     play.on("pointerdown", () => {
       this.scene.start("Play");
     });

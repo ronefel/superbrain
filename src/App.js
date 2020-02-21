@@ -1,4 +1,3 @@
-require('./bootstrap');
 import ObjectUtils from './Utils/ObjectUtils';
 import Config from './Config';
 import Settings from './Settings';
