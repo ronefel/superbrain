@@ -1,10 +1,86 @@
-﻿#game-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+﻿@font-face {
+  font-family: 'Komika Display Bold';
+  src: url('../font/KMKDSP__.ttf') format('truetype');
+}
+
+#game-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 #game-content {
-    max-width: 1280px;
-    max-height: 720px;
-    margin: 0 auto;
+  max-width: 1280px;
+  max-height: 720px;
+  margin: 0 auto;
+}
+
+.question {
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.question::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.question::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.question::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #C1C1C1;
+}
+
+.question-text {
+  font-family: 'Komika Display Bold';
+  font-size: 18pt;
+  color: #0070c1;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+/* Answers custom radio*/
+.radio-custom {
+  font-family: 'Komika Display Bold';
+  display: block;
+  background-color: #f9f9f9;
+  position: relative;
+  padding-left: 31px;
+  margin-top: 12px;
+  margin-right: -10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio-custom input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.radio-custom .checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 22px;
+  width: 23px;
+  background-image: url(../sprites/radio.png);
+  background-repeat: no-repeat;
+  margin-top: -11px;
+}
+.radio-custom input:checked~.checkmark {
+  background-image: url('../sprites/radioChecked.png');
 }

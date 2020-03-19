@@ -3,6 +3,8 @@ import Boot from './Scenes/Boot';
 import Preloader from './Scenes/Preloader';
 import Menu from './Scenes/Menu';
 import Play from './Scenes/Play';
+import ScoringSky from './Scenes/ScoringSky';
+import FallingDown from './Scenes/FallingDown';
 
 export default class Game extends Phaser.Game {
 
@@ -13,9 +15,17 @@ export default class Game extends Phaser.Game {
     // init game
     super(
       {
-        type: Phaser.AUTO,
+        type: Phaser.CANVAS,
         title: "Super Brain",
-
+        physics: {
+          default: 'arcade',
+          arcade: {
+            // debug: true
+          }
+        },
+        dom: {
+          createContainer: true
+        },
         scale: {
           mode: Phaser.Scale.FIT,
           autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -32,6 +42,8 @@ export default class Game extends Phaser.Game {
     this.scene.add("Preloader", Preloader);
     this.scene.add("Menu", Menu);
     this.scene.add("Play", Play);
+    this.scene.add("ScoringSky", ScoringSky);
+    this.scene.add("FallingDown", FallingDown);
 
     // start
     this.scene.start("Boot");

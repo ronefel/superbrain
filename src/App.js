@@ -17,6 +17,12 @@ class App {
     // config
     this.config = Config;
 
+    // questions
+    this.questions = []
+
+    // score
+    this.score = 0;
+
     this.launch();
 
     console.log('App constructed');

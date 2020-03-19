@@ -6,6 +6,12 @@ export default class Menu extends SceneBase {
   create() {
     console.log("Menu");
 
+    this.App.score = 90;
+
+    this.scene.start("Play");
+    // this.scene.start("ScoringSky");
+    // this.scene.start("FallingDown");
+
     // bacground color
     //this.cameras.main.backgroundColor = Phaser.Display.Color.ValueToColor(0x808080);
 
@@ -16,7 +22,7 @@ export default class Menu extends SceneBase {
     // this.addAudioControlls();
 
     // add startScreen
-    this.add.image(0, 0, 'startScreen');
+    this.add.sprite(0, 0, 'startScreen');
 
     // add play button
     this.addPlayButton();
@@ -52,7 +58,7 @@ export default class Menu extends SceneBase {
   // --------------------------------------------------------------------
   addPlayButton() {
     // play
-    let play = this.add.image(390, 24, 'playButton');
+    let play = this.add.sprite(390, 24, 'playButton');
     play.setInteractive();
     play.on("pointerover", () => {
       play.setScale(1.1);
